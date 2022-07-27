@@ -2,13 +2,13 @@ let arrNum = [];
 
 const guessNumber = (arr) => {
   let randomNum = parseInt(Math.random() * 10);
-  arrNum.push(randomNum);
-  let result = arrNum.reduce((sum, current) => sum + current, 0);
+  arr.push(randomNum);
+  let result = arr.reduce((sum, current) => sum + current, 0);
   if (result > 50) {
-    return arrNum;
+    return arr;
   } else {
-    return guessNumber();
+    return guessNumber(arr);
   };
 }
 
-console.log(guessNumber());
+console.log(guessNumber(arrNum));
